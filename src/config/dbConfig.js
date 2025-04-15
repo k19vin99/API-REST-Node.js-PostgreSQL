@@ -1,6 +1,6 @@
-const pg = require('postgres');
+const {Pool} = require('pg');
 
-const db = pg.createConnection({
+const db = new Pool({
     host: 'localhost',
     user: 'postgres',
     password: 'Isidora2020',
@@ -14,3 +14,6 @@ db.connect((err)=>{
     }
     console.log("Conexión exitosa a Postgresql");
 });
+
+
+module.exports = db;
